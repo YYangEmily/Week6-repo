@@ -56,4 +56,6 @@ beta1 <- cov(w, h)/var(w)
 beta1
 beta0 <- mean(h) - beta1 * mean(w)
 beta0
+m <- lm(data = d, height ~ weight)
+summary(m)
 ```
