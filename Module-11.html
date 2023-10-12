@@ -357,9 +357,7 @@ display: none;
 </div>
 
 
-<pre class="r"><code>typeI &lt;- function(mu0, sigma, n, alternative = &quot;two.tailed&quot;, alpha = 0.05, k = 10000) {
-}
-typeI &lt;- function(mu0, sigma, n, alternative = &quot;two.tailed&quot;, alpha = 0.05, k = 1000) {
+<pre class="r"><code>typeI &lt;- function(mu0, sigma, n, alternative = &quot;two.tailed&quot;, alpha = 0.05, k = 1000) {
     p &lt;- rep(NA, k)  # sets up a vector of empty p values
     for (i in 1:k) {
         # sets up a loop to run k simulations
