@@ -70,6 +70,34 @@ beta1 <- cov(w, h)/var(w)
 beta1
 beta0 <- mean(h) - beta1 * mean(w)
 beta0
+
+```
+
+``` {r LM}
 m <- lm(data = d, height ~ weight)
 summary(m)
+g <- ggplot(data = d, aes(x = weight, y = height))
+g <- g + geom_point()
+g <- g + geom_smooth(method = "lm", formula = y ~ x)
+g
+library(lmodel2)  # load the lmodel2 package
+# Run the regression
+mII <- lmodel2(height ~ weight, data = d, range.y = "relative", range.x = "relative",
+    nperm = 1000)
+mII
+plot(mII, "OLS")
+```
+
+```{r Challenge 3}
+## Height by Age
+plot(data = d, height ~ age)
+beta1 <- cor(d$height, d$age) * sd(d$height)/sd(d$age)
+beta1
+beta0 <- mean(d$height) - beta1 * mean(d$age)
+beta0
+m <- lm(height ~ age, data = d)
+m
+ 
+
+
 ```
